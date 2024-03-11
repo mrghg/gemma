@@ -4,7 +4,7 @@ This document is to describe features of the inverse modelling system, which is 
 
 ## Transport model
 
-Brief overview of transport model, including appropriate references.
+Brief overview of transport model, including appropriate references and version number(s).
 
 ### Scope
 
@@ -14,7 +14,11 @@ Brief overview of transport model, including appropriate references.
 ### Meteorology
 
 - Which meteorological fields are used?
-- What resolution(s) is the model being run at (include any interpolation of the met. fields, and any difference between model transport and output resolutions)?
+- What horizontal, vertical and temporal resolution(s) is used (include any interpolation of the met. fields, and any difference between model transport and output resolutions)?
+
+### Model input parameters
+
+Note any specific model setup or parameters that are user/group specific (e.g., number of particles, etc.). 
 
 ## Inversion approach
 
@@ -29,7 +33,7 @@ Use this section to describe uncertainties relating to the measurements and mode
 - How are measurement uncertainties used?
 - How are model uncertainties estimated?
 - How are these different source of uncertainty combined?
-- How is the model compared to the observations? Sampled at same time/location? Comparison of monthly means? Spatially averaged? Etc.
+- How is the model compared to the observations? Sampled at same time/location? Comparison of monthly means? Spatially averaged? Are uncertainty covariances used? Etc.
 
 ### Fluxes and uncertainties
 
@@ -41,3 +45,5 @@ Use this section to describe uncertainties relating to the measurements and mode
 
 - How are boundary conditions or baselines prescribed or estimated?
 - If estimated, what uncertainty is assigned to boundary conditions?
+
+## References
