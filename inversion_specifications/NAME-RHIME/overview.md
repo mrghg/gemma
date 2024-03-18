@@ -4,18 +4,17 @@ This document is to describe features of the inverse modelling system, which is 
 
 ## Transport model
 
-NAME model developped by the UK Met Office (Muller et al. 2013) : it is a Langrangian particle model that we run backward in time. 
-Version ???
+NAME model (version 7.2) developped by the UK Met Office (Muller et al. 2013) : it is a Langrangian particle model that we run backward in time. 
 
 ### Scope
 
-- Domain (lon, lat range, or "global"): covering from 10.73N to 79.06N and from 97.9W to 39.38E (??? Took the Europe domain)
+- Domain (lon, lat range, or "global"): covering from 10.73N to 79.06N and from 97.9W to 39.38E (??? Took the Europe domain).
 - Period: ???
 
 ### Meteorology
 
 - Which meteorological fields are used? 
-???
+Meteorological fields from the UK Met Office Unified Model.
 - What horizontal, vertical and temporal resolution(s) is used (include any interpolation of the met. fields, and any difference between model transport and output resolutions)?
 ???
 
