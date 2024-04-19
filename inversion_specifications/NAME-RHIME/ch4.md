@@ -39,5 +39,4 @@ List of flux datasets, including any modifications:
   - Inlet heights : '248magl','100magl','90magl','185magl',
 
 Modification to the observations:
-- We filter out observations for which the PBL height from our model is at less than 50m from the inlet.
-- The data are averaged on a four hour basis.
+- Already descibed in overview.md
