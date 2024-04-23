@@ -40,7 +40,7 @@ The PDF used for the fluxes uncertainties are truncated normal distributions. Th
 
 ### Boundary conditions
 
-The baselines are estimated during the inversions. The input boundary conditions used as prior are coming from CAMS version 22, using Jungfraujoch monthly means as background. XXX don't know what that means XXX
+The baselines are estimated during the inversions. The input boundary conditions used as prior are the monthly means of the observations at Jungfrauhoch.
 
 To simulate the uncertainty in the boundary conditions, we use a truncated normal distribution, obtained using a scaling factor. The mean of the distribution of the scaling factor is 1, its spread 0.1 and its trucated at zero, so to give non negative values.
 
