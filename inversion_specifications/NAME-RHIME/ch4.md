@@ -40,3 +40,7 @@ List of flux datasets, including any modifications:
 
 Modification to the observations:
 - Already descibed in overview.md
+
+## Minimum error
+
+- The minimum error (see overview.md -> Model and measurement uncertainties) is arbitrarly fixed to 40ppb.
