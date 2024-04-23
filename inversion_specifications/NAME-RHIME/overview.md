@@ -13,11 +13,11 @@ NAME model (version 7.2) developped by the UK Met Office (Muller et al. 2013) : 
 
 ### Meteorology
 
-The meteorological fields from the UK Met Office Unified Model are used. The model is run on a grid of horizontal resolution 0.352degree along longitude, 0.234degree along latitude. Vertically the grid goes from 500m to 19500m (center of cells?) with a vertical resolution of 1000m.
+The meteorological fields from the UK Met Office Unified Model are used. The model is run on a grid of horizontal resolution 0.0135degree x 0.0135degree (Manning and Redington et al. 2021). Vertically, it uses 57 levels, expanding to 12.2km.
 
 ### Model input parameters
 
-The langragian transport model is used with a release of 20000 particules/hour, and max number of particules set to 1e6. The sites and altitude used as input are described in the species specific files.
+The langragian transport model is used with a release of 20000 particules/hour. The sites and altitude used as input are described in the species specific files.
 
 ## Inversion approach
 
@@ -26,12 +26,8 @@ The inversion method is the Hierarchical Bayesian Markov Chain Monte Carlo (HBMC
 ### Model and measurement uncertainties
 
 The measurement are averaged on a four hour basis. We also remove the data for which the PBL height is less than 50m different from the inlet height.
-- How are measurement uncertainties used?
-???
-- How are model uncertainties estimated?
-The model uncertainties are estimated with scaling factors following uniform distibutions (boundaries of 0.1 and 1) multiplied by the pollution events (expected distribution of the concentration derived from the emission distribution and the sensitivity matrix to the emissions, thus baseline removed) plus a minimum error term (fixed to 0.5).
-- How are these different source of uncertainty combined?
-They are aditionned and ???.
+
+The inversion is done by comparing the observation vector (Yobs) to the simulated observations given by Ymod = Hx *x + Hbc *xbc + epsilon, where Hx is the sensitivity matrix that maps emissions to measurement, x is the emission vector (prior emissions multiplied by scaling factor), Hbc is the sensitivity matrix that maps boundary conditions to measurement, xbc is the boundary conditions vector (prior boundary conditions multiplied by a scaling factor) and epsilon the term representing the error : epsilon = sqrt(meas_error**2 + model_error**2 + min_error**2). The measurement uncertainty vector (meas_err) contains a value for each element of Yobs (i.e. each site) and is estimated with the variability of the gas mole fraction variability in the XXX hours XXX the observation. The model error (model_error) is estimated for each site with scaling factors following uniform distibutions (boundaries of 0.1 and 1) multiplied by the pollution events (= Hx * x, which is the expected distribution of the concentration derived from the emission distribution and the sensitivity matrix to the emissions, thus baseline removed). The minimum error is arbitrarly fixed with a value specific for each gases.
 
 The model is compared to the observations using 4h-averaged sampling at the same locations.
 
@@ -52,3 +48,5 @@ To simulate the uncertainty in the boundary conditions, we use a truncated norma
 Ganesan, A. L., Rigby, M., Zammit-Mangion, A., Manning, A. J., Prinn, R. G., Fraser, P. J., Harth, C. M., Kim, K.-R., Krummel, P. B., Li, S., Mühle, J., O'Doherty, S. J., Park, S., Salameh, P. K., Steele, L. P., and Weiss, R. F.: Characterization of uncertainties in atmospheric trace gas inversions using hierarchical Bayesian methods, Atmos. Chem. Phys., 14, 3855–3864, https://doi.org/10.5194/acp-14-3855-2014, 2014.
 
 Eike H. Müller, Rupert Ford, Matthew C. Hort, Lois Huggett, Graham Riley, David J. Thomson, Parallelisation of the Lagrangian atmospheric dispersion model NAME, Computer Physics Communications, Volume 184, Issue 12, 2013, Pages 2734-2745, ISSN 0010-4655, https://doi.org/10.1016/j.cpc.2013.06.022.
+
+Manning, A. J. and Redington, A. L. and Say, D. and O'Doherty, S. and Young, D. and Simmonds, P. G. and Vollmer, M. K. and M\"uhle, J. and Arduini, J. and Spain, G. and Wisher, A. and Maione, M. and Schuck, T. J. and Stanley, K. and Reimann, S. and Engel, A. and Krummel, P. B. and Fraser, P. J. and Harth, C. M. and Salameh, P. K. and Weiss, R. F. and Gluckman, R. and Brown, P. N. and Watterson, J. D. and Arnold, T. : Evidence of a recent decline in UK emissions of hydrofluorocarbons determined by the InTEM inverse model and atmospheric measurements, Atmospheric Chemistry and Physics, volume 21, number 16, pages 12739--12755, https://doi.org/10.5194/acp-21-12739-2021, 2021.
