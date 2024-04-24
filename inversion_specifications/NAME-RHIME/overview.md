@@ -42,7 +42,7 @@ The PDF used for the fluxes uncertainties are truncated normal distributions. Th
 
 The baselines are estimated during the inversions. The input boundary conditions used as prior are the monthly means of the observations at Jungfrauhoch.
 
-To simulate the uncertainty in the boundary conditions, we use a truncated normal distribution, obtained using a scaling factor. The mean of the distribution of the scaling factor is 1, its spread 0.1 and its trucated at zero, so to give non negative values.
+To simulate the uncertainty in the boundary conditions, we use a truncated normal distribution, obtained using a scaling factor. The mean of the distribution of the scaling factor is 1, its spread 0.1 and is truncated at zero, so to give non negative values.
 
 ## References
 Ganesan, A. L., Rigby, M., Zammit-Mangion, A., Manning, A. J., Prinn, R. G., Fraser, P. J., Harth, C. M., Kim, K.-R., Krummel, P. B., Li, S., Mühle, J., O'Doherty, S. J., Park, S., Salameh, P. K., Steele, L. P., and Weiss, R. F.: Characterization of uncertainties in atmospheric trace gas inversions using hierarchical Bayesian methods, Atmos. Chem. Phys., 14, 3855–3864, https://doi.org/10.5194/acp-14-3855-2014, 2014.
