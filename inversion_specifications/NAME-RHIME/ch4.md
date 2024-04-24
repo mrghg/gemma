@@ -25,18 +25,18 @@ List of flux datasets, including any modifications:
         'LIN','LUT','MHD','NOR','OPE',
         'OXK','PAL','SAC','SMR',
         'SSL','STE','TOH','TRN',
-        'UTO','WAO','WES'
-    - Inlet heights : '75magl','212magl','207magl','8magl',
+        'UTO','WAO','WES';
+  - Inlet heights : '75magl','212magl','207magl','8magl',
         '341magl','30magl','110magl','131magl',
         '150magl','115magl',None,'200magl','250magl',
         '98magl','60magl','24magl','100magl','120magl',
         '163magl','12magl','100magl','125magl',
         '12magl','252magl','147magl','180magl',
-        '57magl','10magl','14magl'
+        '57magl','10magl','14magl';
 - DECC:
   - Reference:
-  - Sites: 'BSD','HFD','RGL','TAC',
-  - Inlet heights : '248magl','100magl','90magl','185magl',
+  - Sites: 'BSD','HFD','RGL','TAC',;
+  - Inlet heights : '248magl','100magl','90magl','185magl';
 
 Modification to the observations:
 - Already descibed in overview.md
