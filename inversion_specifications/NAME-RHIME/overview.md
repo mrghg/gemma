@@ -30,10 +30,10 @@ The measurement are averaged on a four hour basis. We also remove the data for w
 The inversion is done by comparing the observation vector ($Y_{obs}$) to the simulated observations given by:
 
 $$
-Y_{mod} = H_x x + H_{bc}x_{bc} + \epsilon
+Y_{\rm mod} = H_x x + H_{bc}x_{bc} + \epsilon
 $$
 
-where Hx is the sensitivity matrix that maps emissions to measurement, x is the emission vector (prior emissions multiplied by scaling factor), Hbc is the sensitivity matrix that maps boundary conditions to measurement, xbc is the boundary conditions vector (prior boundary conditions multiplied by a scaling factor) and epsilon the term representing the error : epsilon = sqrt(meas_error ** 2 + model_error ** 2 + min_error ** 2). The measurement uncertainty vector (meas_err) contains a value for each element of Yobs (i.e. each site), calculated as the standard deviation of the measurements over the averaging period. The model error (model_error) is estimated for each site with scaling factors following uniform distibutions (boundaries of 0.1 and 1) multiplied by the pollution events (= Hx * x, which is the expected distribution of the concentration derived from the emission distribution and the sensitivity matrix to the emissions, thus baseline removed). The minimum error is arbitrarly fixed with a value specific for each gases.
+where $H_x$ is the sensitivity matrix that maps emissions to measurement, $x$ is the emission vector (prior emissions multiplied by scaling factor), Hbc is the sensitivity matrix that maps boundary conditions to measurement, $x_{bc}$ is the boundary conditions vector (prior boundary conditions multiplied by a scaling factor) and epsilon the term representing the error : $\epsilon = \sqrt{\epsilon_{\rm meas}^2 + \epsilon_{\rm model}^2 +\epsilon_{\rm min}^2}$. The measurement uncertainty vector ($\epsilon_{\rm meas}$) contains a value for each element of $Y_{\rm obs}$ (i.e. each site), calculated as the standard deviation of the measurements over the averaging period. The model error ($\epsilon_{\rm model}$) is estimated for each site with scaling factors following uniform distibutions (boundaries of 0.1 and 1) multiplied by the pollution events ($= H_x * x$, which is the expected distribution of the concentration derived from the emission distribution and the sensitivity matrix to the emissions, thus baseline removed). The minimum error ($\epsilon_{\rm min}$) is arbitrarly fixed with a value specific for each gases.
 
 The model is compared to the observations using 4h-averaged sampling at the same locations.
 
