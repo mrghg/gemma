@@ -1,23 +1,23 @@
 # RHIME inverse model specification
 
-This document is to describe features of the inverse modelling system, which is common to all gases. Species-specific features or modifications should be noted in the accompanying file for each species.
+Transport model and inversion setup for the Univeristy of Bristol Regional Hierarchical Inverse Modelling Environment (RHIME). The following applies to all species, unless specified in a species specific file in this folder.
 
 ## Transport model
 
-NAME model (version 7.2) developped by the UK Met Office (Muller et al. 2013) : it is a Langrangian particle model that we run backward in time. 
+NAME model (version 7.2) developped by the UK Met Office (Muller et al. 2013), a Langrangian particle model that we run backwards in time for each measurement site used in the inversion.
 
 ### Scope
 
-- Domain (lon, lat range, or "global"): covering from 10.73N to 79.06N and from 97.9W to 39.38E.
+- Domain: 10.73°N to 79.06°N and from 97.9°W to 39.38°E.
 - Period: 2018-01-01 to 2023-01-01
 
 ### Meteorology
 
-The meteorological fields from the UK Met Office Unified Model are used. The model is run on a grid of horizontal resolution 0.0135degree x 0.0135degree (Manning and Redington et al. 2021). Vertically, it uses 57 levels, expanding to 12.2km.
+The meteorological fields from the UK Met Office Unified Model are used. The model is run on a grid of horizontal resolution 0.0135° x 0.0135° over the UK (Manning and Redington et al. 2021). Vertically, it uses 57 levels, expanding to 12.2km.
 
 ### Model input parameters
 
-The langragian transport model is used with a release of 20000 particules/hour. The sites and altitude used as input are described in the species specific files.
+The langragian transport model is used with a release of 20000 particles/hour. Particles are released from the measurement altitude ± X m. Particles are tracked for 30 days prior to the measurement, or until they leave the domain.
 
 ## Inversion approach
 
@@ -27,20 +27,25 @@ The inversion method is the Hierarchical Bayesian Markov Chain Monte Carlo (HBMC
 
 The measurement are averaged on a four hour basis. We also remove the data for which the PBL height is less than 50m different from the inlet height.
 
-The inversion is done by comparing the observation vector (Yobs) to the simulated observations given by Ymod = Hx * x + Hbc * xbc + epsilon, where Hx is the sensitivity matrix that maps emissions to measurement, x is the emission vector (prior emissions multiplied by scaling factor), Hbc is the sensitivity matrix that maps boundary conditions to measurement, xbc is the boundary conditions vector (prior boundary conditions multiplied by a scaling factor) and epsilon the term representing the error : epsilon = sqrt(meas_error ** 2 + model_error ** 2 + min_error ** 2). The measurement uncertainty vector (meas_err) contains a value for each element of Yobs (i.e. each site), calculated as the standard deviation of the measurements over the averaging period. The model error (model_error) is estimated for each site with scaling factors following uniform distibutions (boundaries of 0.1 and 1) multiplied by the pollution events (= Hx * x, which is the expected distribution of the concentration derived from the emission distribution and the sensitivity matrix to the emissions, thus baseline removed). The minimum error is arbitrarly fixed with a value specific for each gases.
+The inversion is done by comparing the observation vector ($Y_{obs}$) to the simulated observations given by:
+
+$$
+Y_{mod} = H_x x + H_{bc}x_{bc} + \epsilon
+$$
+
+where Hx is the sensitivity matrix that maps emissions to measurement, x is the emission vector (prior emissions multiplied by scaling factor), Hbc is the sensitivity matrix that maps boundary conditions to measurement, xbc is the boundary conditions vector (prior boundary conditions multiplied by a scaling factor) and epsilon the term representing the error : epsilon = sqrt(meas_error ** 2 + model_error ** 2 + min_error ** 2). The measurement uncertainty vector (meas_err) contains a value for each element of Yobs (i.e. each site), calculated as the standard deviation of the measurements over the averaging period. The model error (model_error) is estimated for each site with scaling factors following uniform distibutions (boundaries of 0.1 and 1) multiplied by the pollution events (= Hx * x, which is the expected distribution of the concentration derived from the emission distribution and the sensitivity matrix to the emissions, thus baseline removed). The minimum error is arbitrarly fixed with a value specific for each gases.
 
 The model is compared to the observations using 4h-averaged sampling at the same locations.
 
 ### Fluxes and uncertainties
 
-The fluxes are estimated for each month.
-We use 500 basis functions, calculated using a quadtree algorithm. The quadtree algorithm recursively splits the domain in smaller grid cells for regions which contribute more to the a priori (above basline) mole fraction. This is based on the average footprint over the inversion period and the a priori emissions field.
+The inversion scales fluxes within discrete spatial basis functions, calculated using a quadtree algorithm. The quadtree algorithm recursively splits the domain in smaller grid cells for regions which contribute the most to the *a priori* above basline mole fraction. This calculation is based on the average footprint over the inversion period and the a priori emissions field.
 
-The PDF used for the fluxes uncertainties are truncated normal distributions. The a priori emissions are thus multiplied by scaling factors following a normal distribution of mean 1, spread 1 and truncated at 0, so to give non negative values.
+The PDF used for the flux uncertainties is a truncated normal distribution. The a priori emissions are multiplied by scaling factors following a normal distribution of mean 1, spread 1 and truncated at 0, so to give non negative values.
 
 ### Boundary conditions
 
-The baselines are estimated during the inversions. The input boundary conditions used as prior are the monthly means of the observations at Jungfrauhoch.
+The baselines are estimated during the inversions. The input boundary conditions used as priors are the monthly means of the observations at Jungfrauhoch, unless otherwise stated.
 
 To simulate the uncertainty in the boundary conditions, we use a truncated normal distribution, obtained using a scaling factor. The mean of the distribution of the scaling factor is 1, its spread 0.1 and is truncated at zero, so to give non negative values.
 
