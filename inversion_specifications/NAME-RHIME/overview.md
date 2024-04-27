@@ -13,7 +13,7 @@ NAME model (version 7.2) developped by the UK Met Office (Muller et al. 2013), a
 
 ### Meteorology
 
-The meteorological fields from the UK Met Office Unified Model are used. The model is run on a grid of horizontal resolution 0.0135° x 0.0135° over the UK (Manning and Redington et al. 2021). Vertically, it uses 57 levels, expanding to 12.2km.
+The meteorological fields from the UK Met Office Unified Model are used. The model is run on a grid of horizontal resolution 0.141° x 0.0938° over the domain (Manning and Redington et al. 2021). Vertically, it uses 59 vertical levels, expanding to 29km.
 
 ### Model input parameters
 
