@@ -15,6 +15,10 @@ List of flux datasets, including any modifications:
   - Native temporal resolution: monthly
     - Resampled to: yearly
 
+## Boundary conditions
+
+Mole fraction curtains are extracted from the CAMS CH4 reanalyses at the domain edge.
+
 ## Observations
 
 - ICOS:
