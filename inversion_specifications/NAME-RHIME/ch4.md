@@ -10,8 +10,8 @@ List of flux datasets, including any modifications:
   - Reference:
     - EDGAR version 8 : European Union 2023, European Commission, Joint Research Centre (JRC), EDGAR (Emissions Database for Global Atmospheric Research) Community GHG database, comprising IEA-EDGAR CO2, EDGAR CH4, EDGAR N2O and EDGAR F-gases version 8.0 (2023)
     - UKGHG inventory for the year 2019.
-  - Native spatial resolution: 0.1degree x 0.1degree for EDGAR, 1km x 1km for UKGHG
-    - Regridded to : 0.35degree along longitude, 0.23degree along latitude.
+  - Native spatial resolution: 0.1° x 0.1° for EDGAR, 1km x 1km for UKGHG
+    - Regridded to : 0.35° along longitude, 0.23° along latitude (NAME output resolution defined in [the overview](./overview.md)).
   - Native temporal resolution: monthly
     - Resampled to: yearly
 
@@ -38,9 +38,9 @@ List of flux datasets, including any modifications:
   - Sites: 'BSD','HFD','RGL','TAC',;
   - Inlet heights : '248magl','100magl','90magl','185magl';
 
-Modification to the observations:
-- Already descibed in overview.md
+Observation filtering:
+- See [the overview](./overview.md)
 
 ## Minimum error
 
-- The minimum error (see overview.md -> Model and measurement uncertainties) is arbitrarly fixed to 40ppb.
+- The minimum error (see [the overview](./overview.md) -> Model and measurement uncertainties) is arbitrarly fixed to 40ppb.
