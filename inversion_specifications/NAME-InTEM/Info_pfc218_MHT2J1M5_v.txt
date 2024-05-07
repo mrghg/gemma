@@ -1,0 +1,62 @@
+Run v initiated by: intem_ghg at Tue May  7 15:31:55 2024
+ 
+Gas = pfc218
+ 
+User Name = intem_ghg
+ 
+Run Comment: "Test the local Factor"
+ 
+######### INVERSION PARAMETERS ######### 
+Sites used: MHT2J1M5
+Inversion period: 01/01/2018 to 01/01/2022 
+Inversion period length: 12 months 
+Transport model: NAMEIII 
+InTEM git version: NIR2024-129-g75d30f3
+Observation averaging period: 4h
+Region file used: regions_EUextN_EEZ_Apr2024.txt
+Prior file used: EUextN_0pt5KT_Aug2023_flat_100uncertEUgrp2.txt
+Prior extra file used: priorfle_pfc218.txt_extra_MHT2J1M5_outer_${cc}${yy}_PARIS_EDGAR
+Inversion domain: EUextN
+Model:N - 25km mixed UKV and UMG
+Number of 5-day periods removed per inversion period: 08
+ 
+ 
+######### SETUP STARTINFO PARAMETERS ######### 
+Observation Directory: 'obs_AJM_all'
+Local factor used: False
+Decimal places used in obs files: 4
+Time correlation factor in days: 0.5
+Distance correlation factor in km: 100.
+ 
+ 
+######### GRID PARAMETERS ######### 
+GRID GENERATED IN RUN 
+Limiter (Allows grid size to be limited by geography):           'F'
+Minimum number of grids allowed in a region:     1 
+Is the prior emission distribution being used to influence the grid:  'T'
+Number of loops for grid optimisation=  16
+Number of events reqd at conc threshold= 32
+Concentration threshold =  20.0
+
+
+
+######### Station heights ######### 
+MH height 10magl
+T2 height 185magl
+J1 height 1000magl
+M5 height 500magl
+
+
+
+######### BASELINE FILES ######### 
+J1 baseline updated on Tue Jan 30 19:22:59 2024
+MH baseline updated on Mon Jan 29 14:54:05 2024
+M5 baseline updated on Tue Jan 30 19:39:21 2024
+
+
+
+######### OBS FILES ######### 
+pfc218 All observations obs for J1 created on 2024-01-25 by Joe Pitt, University of Bristol
+pfc218 All observations obs for MH created on 2024-01-25 by Joe Pitt, University of Bristol
+pfc218 All observations obs for M5 created on 2024-01-25 by Joe Pitt, University of Bristol
+pfc218 All observations obs for T2 created on 2024-01-25 by Joe Pitt, University of Bristol
