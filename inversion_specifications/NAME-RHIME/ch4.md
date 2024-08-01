@@ -45,6 +45,3 @@ Mole fraction curtains are extracted from the CAMS CH4 reanalyses at the domain 
 Observation filtering:
 - See [the overview](./overview.md)
 
-## Minimum error
-
-- The minimum error (see [the overview](./overview.md) -> Model and measurement uncertainties) is arbitrarly fixed to 40ppb.
