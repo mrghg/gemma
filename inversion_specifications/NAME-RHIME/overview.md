@@ -43,7 +43,7 @@ where $H_x$ is a Jacobian matrix that quantifies the sensitivity of the mole fra
 
 $\epsilon = \max(\sqrt{\epsilon_{\rm meas}^2 + \epsilon_{\rm model}^2},\epsilon_{\rm min})$
 
-The measurement uncertainty vector ($\epsilon_{\rm meas}$) contains a value for each element of $Y_{\rm obs}$, calculated as the standard deviation of the measurements over the averaging period. The model error ($\epsilon_{\rm model}$) is estimated for each site with scaling factors following uniform distibutions (boundaries of 0.1 and 1) multiplied by the mean simulated pollution event magnitude ($= H_x * x$). The minimum error ($\epsilon_{\rm min}$) is estimated using the standard deviation of $H_x x + H_{bc}x_{bc}-Y_{obs}$.
+The measurement uncertainty vector ($\epsilon_{\rm meas}$) contains a value for each element of $Y_{\rm obs}$, calculated as the standard deviation of the measurements over the averaging period. The model error ($\epsilon_{\rm model}$) is estimated for each site with scaling factors following uniform distibutions (boundaries of 0.1 and 1) multiplied by the mean simulated pollution event magnitude ($= H_x * x$). The minimum error ($\epsilon_{\rm min}$) is set to the standard deviation of $H_x x + H_{bc}x_{bc}-Y_{obs}$.
 
 ### Fluxes and uncertainties
 
