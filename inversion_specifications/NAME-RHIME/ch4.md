@@ -17,7 +17,7 @@ List of flux datasets, including any modifications:
 
 ## Boundary conditions
 
-Mole fraction curtains are extracted from the CAMS CH4 reanalyses at the domain edge.
+Mole fraction curtains are extracted from the daily CAMS global inversion-optimised CH4 concentrations (version 22r2, \url{https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-greenhouse-gas-inversion}) at the domain edge.
 
 ## Observations
 
