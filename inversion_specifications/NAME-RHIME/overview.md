@@ -41,9 +41,9 @@ $$
 
 where $H_x$ is a Jacobian matrix that quantifies the sensitivity of the mole fraction measurements to a *scaling* of the emissions field, $x$ is a vector of scaling factors. $H_{bc}$ is the sensitivity matrix for boundary conditions, $x_{bc}$ is the factor by which the boundary mole fraction is scaled for each of the cardinal directions (N, S, E, W). $\epsilon$ is the uncertainty associated with the observations and model:
 
-$\epsilon = \sqrt{\epsilon_{\rm meas}^2 + \epsilon_{\rm model}^2 +\epsilon_{\rm min}^2}$
+$\epsilon = \max(\sqrt{\epsilon_{\rm meas}^2 + \epsilon_{\rm model}^2},\epsilon_{\rm min})$
 
-The measurement uncertainty vector ($\epsilon_{\rm meas}$) contains a value for each element of $Y_{\rm obs}$, calculated as the standard deviation of the measurements over the averaging period. The model error ($\epsilon_{\rm model}$) is estimated for each site with scaling factors following uniform distibutions (boundaries of 0.1 and 1) multiplied by the mean simulated pollution event magnitude ($= H_x * x$). The minimum error ($\epsilon_{\rm min}$) is arbitrarly fixed with a value specific for each gases.
+The measurement uncertainty vector ($\epsilon_{\rm meas}$) contains a value for each element of $Y_{\rm obs}$, calculated as the standard deviation of the measurements over the averaging period. The model error ($\epsilon_{\rm model}$) is estimated for each site with scaling factors following uniform distibutions (boundaries of 0.1 and 1) multiplied by the mean simulated pollution event magnitude ($= H_x * x$). The minimum error ($\epsilon_{\rm min}$) is estimated using the standard deviation of $H_x x + H_{bc}x_{bc}-Y_{obs}$.
 
 ### Fluxes and uncertainties
 
